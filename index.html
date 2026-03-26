@@ -3,532 +3,596 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>한국 아이돌 팬덤 굿즈 문화</title>
+<title>한국 아이돌 팬덤 굿즈 문화 🌸</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   @font-face {
     font-family: 'Cafe24SsurroundAir';
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+    font-weight: normal; font-style: normal;
   }
-
   :root {
-    --color-main: #f19ec2;
-    --color-bg: #fbfbe2;
-    --color-text-dark: #7a4a5e;
-    --color-text-mid: #c47a9a;
-    --color-mint: #b8eee0;
-    --color-lavender: #d4c5f0;
-    --color-peach: #ffd9c0;
-    --color-sky: #c5e8f5;
-    --color-card: #f5f5d0;
-    --color-border: #f5c8dc;
+    --main:      #f19ec2;
+    --bg:        #fbfbe2;
+    --dark:      #7a4a5e;
+    --mid:       #c47a9a;
+    --peach:     #ffd9c0;
+    --yellow:    #fff0b0;
+    --coral:     #ffb8c8;
+    --apricot:   #ffc8a0;
+    --card:      #f5f5d0;
+    --border:    #f5c8dc;
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   body {
-    background: var(--color-bg);
+    background: var(--bg);
     font-family: 'Cafe24SsurroundAir', 'Nunito', sans-serif;
-    color: var(--color-text-dark);
-    line-height: 1.7;
-    padding: 0 0 60px 0;
+    color: var(--dark);
+    line-height: 1.75;
+    padding-bottom: 72px;
   }
 
-  /* 헤더 */
+  /* ── 헤더 ── */
   .hero {
-    background: linear-gradient(135deg, #fde8f2 0%, #f5f0ff 50%, #e8f8f2 100%);
-    border-bottom: 3px dashed var(--color-border);
-    padding: 52px 24px 40px;
+    background: linear-gradient(160deg, #fde0ee 0%, #fdf0c8 55%, #ffe8d0 100%);
+    border-bottom: 3px dashed var(--border);
+    padding: 56px 24px 44px;
     text-align: center;
     position: relative;
     overflow: hidden;
   }
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 20% 50%, rgba(241,158,194,0.15) 0%, transparent 60%),
-                radial-gradient(circle at 80% 30%, rgba(212,197,240,0.15) 0%, transparent 60%);
-  }
-  .hero-emoji {
-    font-size: 2.8rem;
-    margin-bottom: 12px;
-    display: block;
-    animation: bounce-soft 3s ease-in-out infinite;
-  }
-  @keyframes bounce-soft {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-  }
-  .hero h1 {
-    font-size: 1.85rem;
-    color: var(--color-text-dark);
-    margin-bottom: 8px;
-    position: relative;
-  }
-  .hero h1 span { color: var(--color-main); }
-  .hero-sub {
-    font-size: 0.9rem;
-    color: var(--color-text-mid);
-    position: relative;
-  }
-  .deco-float {
-    position: absolute;
-    font-size: 1.4rem;
-    opacity: 0.3;
-    animation: float 4s ease-in-out infinite;
+  .hero-star {
+    position: absolute; opacity: 0.22;
+    animation: star-float 5s ease-in-out infinite;
     pointer-events: none;
   }
-  @keyframes float {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-12px) rotate(10deg); }
+  @keyframes star-float {
+    0%,100% { transform: translateY(0) rotate(0deg); }
+    50%      { transform: translateY(-12px) rotate(18deg); }
   }
-
-  /* 본문 */
-  .container { max-width: 760px; margin: 0 auto; padding: 0 20px; }
-
-  /* 섹션 */
-  .section { margin-top: 40px; }
-  .section-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 18px;
+  .hero-emoji {
+    font-size: 3rem; display: block; margin-bottom: 14px;
+    animation: bounce 3s ease-in-out infinite;
   }
-  .section-icon {
-    width: 42px; height: 42px;
-    border-radius: 50%;
+  @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-9px)} }
+  .hero h1 { font-size: 2rem; color: var(--dark); margin-bottom: 8px; line-height: 1.3; }
+  .hero h1 em { color: var(--main); font-style: normal; }
+  .hero-sub { font-size: 0.9rem; color: var(--mid); }
+
+  /* ── 컨테이너 ── */
+  .wrap { max-width: 780px; margin: 0 auto; padding: 0 22px; }
+
+  /* ── 섹션 ── */
+  .sec { margin-top: 44px; }
+  .sec-head { display: flex; align-items: center; gap: 11px; margin-bottom: 18px; }
+  .sec-icon {
+    width: 44px; height: 44px; border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    font-size: 1.2rem;
-    flex-shrink: 0;
-    box-shadow: 0 3px 10px rgba(241,158,194,0.25);
+    font-size: 1.25rem; flex-shrink: 0;
+    box-shadow: 0 3px 12px rgba(241,158,194,0.28);
   }
-  .section-title {
-    font-size: 1.2rem;
-    color: var(--color-text-dark);
-  }
-  .section-title span { color: var(--color-main); }
+  .sec-title { font-size: 1.18rem; color: var(--dark); }
+  .sec-title em { color: var(--main); font-style: normal; }
 
-  /* 카드 */
+  /* ── 카드 ── */
   .card {
-    background: var(--color-card);
-    border: 2px solid var(--color-border);
-    border-radius: 22px;
-    padding: 22px 20px;
-    margin-bottom: 14px;
-    box-shadow: 0 4px 16px rgba(241,158,194,0.12);
-    transition: all 0.25s ease;
+    background: var(--card); border: 2px solid var(--border);
+    border-radius: 22px; padding: 22px 20px; margin-bottom: 14px;
+    box-shadow: 0 4px 18px rgba(241,158,194,0.13);
+    transition: transform .25s ease, box-shadow .25s ease;
   }
-  .card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 28px rgba(241,158,194,0.22);
-  }
-  .card.mint { border-color: #a0dfd0; background: #f0fdf8; }
-  .card.lavender { border-color: #c0b0e8; background: #f5f0ff; }
-  .card.peach { border-color: #f0c0a0; background: #fff8f0; }
-  .card.sky { border-color: #a0d0e8; background: #f0f8ff; }
-  .card.pink { border-color: var(--color-main); background: #fff0f6; }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(241,158,194,0.24); }
+  .card.peach   { background:#fff6f0; border-color:#f0c8a8; }
+  .card.yellow  { background:#fffde8; border-color:#e8d870; }
+  .card.coral   { background:#fff2f5; border-color:#f0a8b8; }
+  .card.apricot { background:#fff8f0; border-color:#f0b888; }
+  .card.rose    { background:#fff0f6; border-color:var(--main); }
+  .card.warm    { background:#fff8ee; border-color:#f0c888; }
+  .card-title { font-size: 1rem; color: var(--dark); margin-bottom: 9px; display:flex; align-items:center; gap:6px; }
+  .card p { font-size: 0.88rem; color: var(--mid); line-height: 1.8; }
+  .card p strong { color: var(--dark); }
 
-  .card-title {
-    font-size: 1rem;
-    color: var(--color-text-dark);
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .card p {
-    font-size: 0.88rem;
-    color: var(--color-text-mid);
-    line-height: 1.75;
-  }
-
-  /* 인포 박스 */
+  /* ── 인포박스 ── */
   .info-box {
-    background: linear-gradient(135deg, #fde8f2, #f5f0ff);
-    border: 2px dashed var(--color-main);
-    border-radius: 20px;
-    padding: 20px 22px;
-    margin-bottom: 14px;
+    background: linear-gradient(135deg, #fde8f2 0%, #fff8d8 100%);
+    border: 2px dashed var(--main); border-radius: 22px;
+    padding: 22px; margin-bottom: 14px;
   }
-  .info-box p { font-size: 0.88rem; color: var(--color-text-dark); line-height: 1.8; }
-  .info-box .highlight { color: var(--color-main); font-weight: 700; }
+  .info-box p { font-size: 0.88rem; color: var(--dark); line-height: 1.85; }
+  .hl { color: var(--main); font-weight: 700; }
 
-  /* 태그 */
-  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
-  .tag {
-    border-radius: 999px;
-    padding: 4px 14px;
-    font-size: 0.78rem;
-    border: 1.5px solid;
-  }
-  .tag-pink { background: #fde8f0; color: #c06090; border-color: var(--color-main); }
-  .tag-mint { background: #e5f9f4; color: #3a8070; border-color: #7ecfc0; }
-  .tag-lav { background: #ede8fb; color: #6050a0; border-color: #a898d8; }
-  .tag-peach { background: #fff0e8; color: #b06030; border-color: #e8a880; }
+  /* ── 태그 ── */
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 13px; }
+  .tag { border-radius: 999px; padding: 5px 15px; font-size: 0.77rem; border: 1.5px solid; }
+  .t-pink   { background:#fde8f0; color:#b85888; border-color:var(--main); }
+  .t-yellow { background:#fffbe0; color:#9a7020; border-color:#e8c840; }
+  .t-peach  { background:#fff5ee; color:#b06030; border-color:#f0b888; }
+  .t-coral  { background:#fff0f4; color:#c04068; border-color:#f0a0b8; }
 
-  /* 비교 그리드 */
-  .compare-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-bottom: 14px;
-  }
-  @media (max-width: 520px) {
-    .compare-grid { grid-template-columns: 1fr; }
-  }
-  .compare-card {
-    border-radius: 20px;
-    padding: 20px 18px;
-    border: 2px solid;
-  }
-  .compare-card.official {
-    background: #fff0f6;
-    border-color: var(--color-main);
-  }
-  .compare-card.unofficial {
-    background: #f0f8ff;
-    border-color: #88c8e8;
-  }
-  .compare-card h3 {
-    font-size: 0.95rem;
-    margin-bottom: 12px;
-    padding-bottom: 10px;
-    border-bottom: 2px dashed;
-  }
-  .compare-card.official h3 { color: #c06090; border-color: #f5c8dc; }
-  .compare-card.unofficial h3 { color: #4a88a8; border-color: #b8d8ec; }
-  .compare-card ul { list-style: none; padding: 0; }
-  .compare-card ul li {
-    font-size: 0.82rem;
-    color: var(--color-text-mid);
-    padding: 5px 0;
-    border-bottom: 1px dashed #f0e0ea;
-    display: flex;
-    gap: 6px;
-    align-items: flex-start;
-  }
-  .compare-card.unofficial ul li { border-color: #d0e8f4; }
-  .compare-card ul li:last-child { border: none; }
+  /* ── 구분선 ── */
+  .divider { border: none; border-top: 2px dashed var(--border); margin: 40px 0 0; }
 
-  /* 구분선 */
-  .divider {
-    border: none;
-    border-top: 2px dashed var(--color-border);
-    margin: 36px 0 0;
-  }
-
-  /* 통계 배너 */
-  .stat-banner {
-    background: linear-gradient(135deg, var(--color-main) 0%, #e888b2 100%);
-    border-radius: 22px;
-    padding: 24px 22px;
-    text-align: center;
-    color: var(--color-bg);
-    box-shadow: 0 6px 24px rgba(241,158,194,0.45);
-    margin-bottom: 14px;
-  }
-  .stat-banner .stat-num {
-    font-size: 2.2rem;
-    font-weight: 800;
-    display: block;
-    margin-bottom: 4px;
-  }
-  .stat-banner .stat-label { font-size: 0.9rem; opacity: 0.9; }
-
-  /* 타임라인 */
-  .timeline { position: relative; padding-left: 28px; }
+  /* ── 타임라인 ── */
+  .timeline { position: relative; padding-left: 30px; }
   .timeline::before {
-    content: '';
-    position: absolute;
-    left: 10px;
-    top: 0; bottom: 0;
-    width: 3px;
-    background: linear-gradient(to bottom, var(--color-main), var(--color-lavender));
+    content: ''; position: absolute;
+    left: 11px; top: 0; bottom: 0; width: 3px;
+    background: linear-gradient(to bottom, var(--main), var(--apricot));
     border-radius: 3px;
   }
-  .timeline-item {
-    position: relative;
-    margin-bottom: 20px;
+  .tl-item { position: relative; margin-bottom: 24px; }
+  .tl-item::before {
+    content: ''; position: absolute;
+    left: -23px; top: 8px; width: 15px; height: 15px;
+    border-radius: 50%; background: var(--main);
+    border: 3px solid var(--bg); box-shadow: 0 0 0 2.5px var(--main);
   }
-  .timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -22px;
-    top: 8px;
-    width: 14px; height: 14px;
-    border-radius: 50%;
-    background: var(--color-main);
-    border: 3px solid var(--color-bg);
-    box-shadow: 0 0 0 2px var(--color-main);
-  }
-  .timeline-gen {
-    font-size: 0.75rem;
-    color: var(--color-main);
-    font-weight: 700;
-    margin-bottom: 3px;
-    letter-spacing: 0.05em;
-  }
-  .timeline-text {
-    font-size: 0.87rem;
-    color: var(--color-text-mid);
-    line-height: 1.65;
-  }
+  .tl-gen { font-size: 0.75rem; color: var(--main); font-weight: 700; letter-spacing:.05em; margin-bottom: 4px; }
+  .tl-text { font-size: 0.87rem; color: var(--mid); line-height: 1.75; }
+  .tl-text strong { color: var(--dark); }
 
-  /* 이슈 카드 */
-  .issue-row {
-    display: flex;
-    gap: 8px;
-    align-items: flex-start;
-    padding: 12px 0;
-    border-bottom: 1.5px dashed var(--color-border);
+  /* ── 비교 그리드 ── */
+  .cmp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 14px; }
+  @media(max-width:520px){ .cmp-grid { grid-template-columns: 1fr; } }
+  .cmp-card { border-radius: 22px; padding: 22px 18px; border: 2px solid; }
+  .cmp-official   { background:#fff0f6; border-color:var(--main); }
+  .cmp-unofficial { background:#fffde8; border-color:#e0c840; }
+  .cmp-card h3 { font-size:.96rem; margin-bottom: 14px; padding-bottom: 11px; border-bottom: 2px dashed; }
+  .cmp-official   h3 { color:#b85888; border-color:#f5c8dc; }
+  .cmp-unofficial h3 { color:#9a7020; border-color:#e8d870; }
+  .cmp-card ul { list-style: none; }
+  .cmp-card ul li {
+    font-size:.82rem; color: var(--mid);
+    padding: 5px 0; border-bottom: 1px dashed;
+    display:flex; gap:7px; align-items:flex-start;
   }
+  .cmp-official   ul li { border-color:#fde0ea; }
+  .cmp-unofficial ul li { border-color:#f0e898; }
+  .cmp-card ul li:last-child { border: none; }
+
+  /* ── 이슈 ── */
+  .issue-row { display:flex; gap:10px; align-items:flex-start; padding: 13px 0; border-bottom: 1.5px dashed var(--border); }
   .issue-row:last-child { border: none; }
   .issue-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 1px; }
-  .issue-text { font-size: 0.86rem; color: var(--color-text-mid); line-height: 1.7; }
-  .issue-text strong { color: var(--color-text-dark); }
+  .issue-text { font-size:.86rem; color: var(--mid); line-height: 1.75; }
+  .issue-text strong { color: var(--dark); }
 
-  /* footer */
-  .footer {
-    text-align: center;
-    margin-top: 48px;
-    padding: 20px;
-    font-size: 0.78rem;
-    color: var(--color-text-mid);
+  /* ── 스탯 배너 ── */
+  .stat-banner {
+    background: linear-gradient(135deg, var(--main), #e07aaa);
+    border-radius: 22px; padding: 26px 22px; text-align: center;
+    color: var(--bg); box-shadow: 0 7px 26px rgba(241,158,194,0.45);
+    margin-bottom: 14px;
   }
+  .stat-num   { font-size: 2.4rem; display: block; margin-bottom: 5px; }
+  .stat-label { font-size: .9rem; opacity: .9; }
+
+  /* ══ 공식 MD샵 링크 섹션 ══ */
+  .shop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  .shop-card {
+    border-radius: 20px;
+    padding: 18px 16px;
+    border: 2px solid;
+    text-decoration: none;
+    display: block;
+    transition: transform .22s ease, box-shadow .22s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .shop-card::after {
+    content: '→';
+    position: absolute;
+    right: 16px; top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.1rem;
+    opacity: 0;
+    transition: opacity .2s, right .2s;
+  }
+  .shop-card:hover { transform: translateY(-4px); }
+  .shop-card:hover::after { opacity: 1; right: 14px; }
+
+  .shop-card .s-label {
+    font-size: 0.68rem; font-weight: 700;
+    border-radius: 999px; padding: 3px 10px;
+    display: inline-block; margin-bottom: 8px;
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: 0.04em;
+  }
+  .shop-card .s-name { font-size: 1rem; color: var(--dark); margin-bottom: 4px; }
+  .shop-card .s-desc { font-size: 0.76rem; line-height: 1.5; }
+  .shop-card .s-url {
+    font-size: 0.68rem; margin-top: 8px;
+    font-family: 'Nunito', sans-serif;
+    opacity: 0.6; word-break: break-all;
+  }
+
+  /* 소속사별 컬러 */
+  .hybe    { background:#fff5f8; border-color:#f5b8d0; }
+  .hybe    .s-label { background:#f5b8d0; color:#9a3060; }
+  .hybe    .s-desc  { color:#c47890; }
+  .hybe    .s-url   { color:#b06080; }
+  .hybe:hover { box-shadow: 0 10px 26px rgba(241,158,194,0.3); }
+
+  .sm      { background:#fff8f0; border-color:#f0c898; }
+  .sm      .s-label { background:#f0c898; color:#905030; }
+  .sm      .s-desc  { color:#c08050; }
+  .sm      .s-url   { color:#a07040; }
+  .sm:hover { box-shadow: 0 10px 26px rgba(255,180,100,0.3); }
+
+  .jyp     { background:#fff0f6; border-color:var(--main); }
+  .jyp     .s-label { background:var(--coral); color:#902050; }
+  .jyp     .s-desc  { color:var(--mid); }
+  .jyp     .s-url   { color:#b04060; }
+  .jyp:hover { box-shadow: 0 10px 26px rgba(241,158,194,0.35); }
+
+  .yg      { background:#fffde8; border-color:#e8d050; }
+  .yg      .s-label { background:#ffe870; color:#907010; }
+  .yg      .s-desc  { color:#a08030; }
+  .yg      .s-url   { color:#907020; }
+  .yg:hover { box-shadow: 0 10px 26px rgba(255,220,80,0.3); }
+
+  .starship { background:#fff6f0; border-color:var(--apricot); }
+  .starship .s-label { background:var(--apricot); color:#904020; }
+  .starship .s-desc  { color:#c07040; }
+  .starship .s-url   { color:#a06030; }
+  .starship:hover { box-shadow: 0 10px 26px rgba(255,180,120,0.3); }
+
+  .global  { background:#fdf0fa; border-color:#e8a8d0; }
+  .global  .s-label { background:#f0c0e0; color:#882060; }
+  .global  .s-desc  { color:#c06090; }
+  .global  .s-url   { color:#a04070; }
+  .global:hover { box-shadow: 0 10px 26px rgba(230,150,200,0.3); }
+
+  /* 섹션 소제목 */
+  .sub-head {
+    font-size: 0.82rem; color: var(--mid);
+    font-weight: 700; letter-spacing: 0.04em;
+    margin: 20px 0 12px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .sub-head::before {
+    content: '';
+    display: inline-block;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--main);
+    flex-shrink: 0;
+  }
+
+  /* ── 푸터 ── */
+  .footer { text-align: center; margin-top: 52px; font-size:.77rem; color: var(--mid); padding: 0 20px; }
+  @keyframes spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
 </style>
 </head>
 <body>
 
-<!-- 헤더 -->
+<!-- ══ 헤더 ══ -->
 <div class="hero">
-  <span class="deco-float" style="top:12%;left:5%;animation-delay:0s">🌸</span>
-  <span class="deco-float" style="top:10%;right:7%;animation-delay:1.2s">✨</span>
-  <span class="deco-float" style="bottom:15%;left:8%;animation-delay:2s">🎀</span>
-  <span class="deco-float" style="bottom:18%;right:5%;animation-delay:0.6s">💕</span>
+  <svg class="hero-star" style="top:10%;left:4%;width:38px;animation-delay:0s"     viewBox="0 0 36 36"><path d="M18 3l3.2 9.6h10.1l-8.2 5.9 3.1 9.6L18 23.3l-8.2 5.8 3.1-9.6-8.2-5.9h10.1z" fill="#f19ec2"/></svg>
+  <svg class="hero-star" style="top:12%;right:5%;width:28px;animation-delay:1.3s"  viewBox="0 0 36 36"><path d="M18 3l3.2 9.6h10.1l-8.2 5.9 3.1 9.6L18 23.3l-8.2 5.8 3.1-9.6-8.2-5.9h10.1z" fill="#ffe96a"/></svg>
+  <svg class="hero-star" style="bottom:14%;left:7%;width:22px;animation-delay:2s"  viewBox="0 0 36 36"><path d="M18 3l3.2 9.6h10.1l-8.2 5.9 3.1 9.6L18 23.3l-8.2 5.8 3.1-9.6-8.2-5.9h10.1z" fill="#ffc8a0"/></svg>
+  <svg class="hero-star" style="bottom:18%;right:6%;width:18px;animation-delay:0.7s" viewBox="0 0 36 36"><path d="M18 3l3.2 9.6h10.1l-8.2 5.9 3.1 9.6L18 23.3l-8.2 5.8 3.1-9.6-8.2-5.9h10.1z" fill="#ffb8c8"/></svg>
+  <svg class="hero-star" style="top:40%;left:2%;width:14px;animation-delay:3s"     viewBox="0 0 36 36"><path d="M18 3l3.2 9.6h10.1l-8.2 5.9 3.1 9.6L18 23.3l-8.2 5.8 3.1-9.6-8.2-5.9h10.1z" fill="#f19ec2"/></svg>
+  <svg class="hero-star" style="top:35%;right:3%;width:16px;animation-delay:1.8s"  viewBox="0 0 36 36"><path d="M18 3l3.2 9.6h10.1l-8.2 5.9 3.1 9.6L18 23.3l-8.2 5.8 3.1-9.6-8.2-5.9h10.1z" fill="#ffe96a"/></svg>
+
   <span class="hero-emoji">🎁</span>
-  <h1>한국 아이돌 <span>팬덤 굿즈 문화</span></h1>
-  <p class="hero-sub">공식 굿즈 vs 비공식 굿즈 · 역사 · 종류 · 차이점 완전 정리 ✨</p>
+  <h1>한국 아이돌 <em>팬덤 굿즈 문화</em></h1>
+  <p class="hero-sub">공식 굿즈 vs 비공식 굿즈 · 역사 · 종류 · 차이점 · 공식 MD샵 링크 ✨</p>
 </div>
 
-<div class="container">
+<div class="wrap">
 
-  <!-- 굿즈란? -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-icon" style="background:#fde8f0;">💡</div>
-      <div class="section-title">굿즈란 무엇인가요? <span>기본 개념</span></div>
+  <!-- ══ 굿즈란? ══ -->
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-icon" style="background:#fde8f0;">💡</div>
+      <div class="sec-title">굿즈란 무엇인가요? <em>기본 개념</em></div>
     </div>
     <div class="info-box">
       <p>
-        '굿즈(Goods)'는 영어로 '상품'을 뜻하는 단어에서 유래했어요. 한국에서는 <span class="highlight">특정 아이돌이나 연예인을 상징하는 상품</span>을 가리키는 말로 자리 잡았죠. 팬덤 문화가 성장하면서 굿즈는 단순한 기념품을 넘어, <span class="highlight">아이돌과 팬을 이어주는 특별한 매개체</span>이자 팬으로서의 정체성을 확인하는 상징이 되었어요. 좋아하는 아이돌의 굿즈를 소유함으로써 소속감을 느끼고 팬덤 활동의 만족감을 얻는 것이 굿즈 문화의 핵심이랍니다 🌸
+        '굿즈(Goods)'는 영어로 '상품'을 뜻하는 단어에서 유래했어요.
+        한국에서는 <span class="hl">특정 아이돌이나 연예인을 상징하는 상품</span>을 가리키는 말로 자리 잡았죠.
+        팬덤 문화가 성장하면서 굿즈는 단순한 기념품을 넘어,
+        <span class="hl">아이돌과 팬을 이어주는 특별한 매개체</span>이자
+        팬으로서의 정체성을 확인하는 상징이 되었어요.
+        좋아하는 아이돌의 굿즈를 소유함으로써 소속감을 느끼고
+        팬덤 활동의 만족감을 얻는 것이 굿즈 문화의 핵심이랍니다 🌸
       </p>
       <div class="tags">
-        <span class="tag tag-pink">🛍️ 소속감의 상징</span>
-        <span class="tag tag-mint">💌 아이돌-팬 연결 매개체</span>
-        <span class="tag tag-lav">⭐ 팬덤 정체성 표현</span>
-        <span class="tag tag-peach">🎀 희소성과 소장 가치</span>
+        <span class="tag t-pink">🎀 소속감의 상징</span>
+        <span class="tag t-yellow">⭐ 아이돌-팬 연결 매개체</span>
+        <span class="tag t-peach">🌸 팬덤 정체성 표현</span>
+        <span class="tag t-coral">💕 희소성과 소장 가치</span>
       </div>
     </div>
   </div>
 
   <hr class="divider">
 
-  <!-- 역사 -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-icon" style="background:#e8f0ff;">📖</div>
-      <div class="section-title">굿즈 문화의 <span>역사</span></div>
+  <!-- ══ 역사 ══ -->
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-icon" style="background:#fff4cc;">📖</div>
+      <div class="sec-title">굿즈 문화의 <em>역사</em></div>
     </div>
     <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-gen">1세대 (1990년대 후반~2000년대 초)</div>
-        <div class="timeline-text">
-          H.O.T., 젝스키스, god, 신화, 핑클 등의 1세대 아이돌과 함께 본격화됐어요. 초기에는 팬덤을 상징하는 <strong>색깔 풍선과 우비</strong> 같은 응원도구가 주를 이뤘고, 사진이나 브로마이드도 인기였죠. 공식 팬클럽 가입이 팬 활동의 시작이었던 시대예요.
-        </div>
+      <div class="tl-item">
+        <div class="tl-gen">1세대 (1990년대 후반 ~ 2000년대 초)</div>
+        <div class="tl-text">H.O.T., 젝스키스, god, 신화, 핑클 등의 1세대 아이돌과 함께 본격화됐어요. 초기에는 팬덤을 상징하는 <strong>색깔 풍선과 우비</strong> 같은 응원도구가 주를 이뤘고, 사진이나 브로마이드도 인기였죠. 공식 팬클럽 가입이 팬 활동의 시작이었던 시대예요.</div>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-gen">2세대 (2000년대 중반~2010년대 초)</div>
-        <div class="timeline-text">
-          동방신기, 슈퍼주니어, 소녀시대, 빅뱅 등의 2세대 아이돌 등장 이후 굿즈가 본격적인 <strong>MD(머천다이징) 사업</strong>으로 확장됐어요. 대형 기획사들이 공식 굿즈를 콘서트장에서 판매하기 시작하고, 풍선 대신 <strong>응원봉</strong> 문화가 탄생했죠. 펄 컬러 등으로 팬덤 고유 색상도 정교해졌어요.
-        </div>
+      <div class="tl-item">
+        <div class="tl-gen">2세대 (2000년대 중반 ~ 2010년대 초)</div>
+        <div class="tl-text">동방신기, 슈퍼주니어, 소녀시대, 빅뱅 등의 2세대 아이돌 등장 이후 굿즈가 본격적인 <strong>MD(머천다이징) 사업</strong>으로 확장됐어요. 대형 기획사들이 공식 굿즈를 콘서트장에서 판매하기 시작했고, 풍선 대신 <strong>응원봉</strong> 문화가 탄생했죠.</div>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-gen">3~4세대 (2010년대 후반~현재)</div>
-        <div class="timeline-text">
-          BTS, BLACKPINK, 아이브, 뉴진스 등 K-POP의 전 세계 확산과 함께 굿즈 시장이 폭발적으로 성장했어요. 문구류부터 화장품, 식품, IT기기까지 <strong>라이프스타일 전 영역</strong>으로 확장되었고, 공식 온·오프라인 쇼핑몰, 팝업스토어 등 다양한 유통 채널이 생겨났어요. 비공식 굿즈 시장도 함께 급성장했죠.
-        </div>
+      <div class="tl-item">
+        <div class="tl-gen">3 ~ 4세대 (2010년대 후반 ~ 현재)</div>
+        <div class="tl-text">BTS, BLACKPINK, 아이브, 뉴진스 등 K-POP의 전 세계 확산과 함께 굿즈 시장이 폭발적으로 성장했어요. 문구류부터 화장품, 식품, IT기기까지 <strong>라이프스타일 전 영역</strong>으로 확장되었고, 비공식 굿즈 시장도 함께 급성장했죠.</div>
       </div>
     </div>
   </div>
 
   <hr class="divider">
 
-  <!-- 공식 굿즈 -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-icon" style="background:#fde8f0;">🏢</div>
-      <div class="section-title"><span>공식 굿즈</span> Official Goods</div>
+  <!-- ══ 공식 굿즈 ══ -->
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-icon" style="background:#fde8f0;">🏢</div>
+      <div class="sec-title"><em>공식 굿즈</em> Official Goods</div>
     </div>
-
-    <div class="card pink">
+    <div class="card rose">
       <div class="card-title">🏢 공식 굿즈란?</div>
       <p>소속 엔터테인먼트사가 직접 기획·제작·판매하는 상품이에요. 공식 온·오프라인 쇼핑몰, 콘서트 현장, 팝업스토어 등에서 구매할 수 있어요. 아이돌의 IP(지식재산권)를 기반으로 하기 때문에 법적으로 완전히 공인된 상품이랍니다.</p>
     </div>
-
-    <div class="card mint">
-      <div class="card-title">🎵 대표 공식 굿즈 종류</div>
+    <div class="card yellow">
+      <div class="card-title">⭐ 대표 공식 굿즈 종류</div>
       <p>
-        <strong>응원봉(공봉)</strong> — 가장 상징적인 굿즈예요. 아이돌 그룹마다 고유 디자인과 애칭이 있어요. BTS의 '아미밤', 트와이스의 '캔디봉', 세븐틴의 '캐럿봉' 등이 유명하죠. 최신 응원봉은 블루투스로 공연 스태프가 원격 제어도 가능하고, 좌석별로 다른 색상을 연출하기도 해요.
-      </p>
-      <br>
-      <p>
-        <strong>포토카드(포카)</strong> — 앨범 구매 시 랜덤으로 들어있는 멤버 사진 카드예요. 희귀한 셀카는 수십만 원에 거래되기도 하고, '포카마켓' 같은 전용 플랫폼도 생겨났어요. 한국소비자원 조사에 따르면 K-POP 음반 구매자의 52.7%가 포토카드 수집을 목적으로 앨범을 산다고 응답했어요.
-      </p>
-      <br>
-      <p>
+        <strong>응원봉(공봉)</strong> — 가장 상징적인 굿즈예요. 그룹마다 고유 디자인과 애칭이 있어요. BTS의 '아미밤', 트와이스의 '캔디봉', 세븐틴의 '캐럿봉' 등이 유명하죠. 최신 응원봉은 블루투스로 원격 제어도 가능하고, 좌석별로 다른 색상을 연출하기도 해요.
+        <br><br>
+        <strong>포토카드(포카)</strong> — 앨범 구매 시 랜덤으로 들어있는 멤버 사진 카드예요. 희귀한 셀카는 수십만 원에 거래되기도 하고, '포카마켓' 같은 전용 플랫폼도 생겨났어요. K-POP 음반 구매자의 52.7%가 포토카드 수집을 목적으로 앨범을 산다고 응답했어요.
+        <br><br>
         <strong>시즌그리팅</strong> — 연말에 출시되는 굿즈 세트예요. 달력, 다이어리, 포스터, DVD, 포토카드 등 한 해의 모습을 담은 다양한 아이템이 묶음으로 구성돼요.
+        <br><br>
+        <strong>기타 MD</strong> — 키링, 인형, 에코백, 텀블러, 머그잔, 파우치, 슬로건, 의류, 화장품, 향초, 주방용품까지 라이프스타일 전반으로 확장됐어요.
       </p>
-      <br>
-      <p>
-        <strong>기타 MD</strong> — 키링, 인형, 에코백, 텀블러, 머그잔, 파우치, 슬로건, 부채, 의류, 화장품, 향초, 주방용품까지 라이프스타일 전반으로 확장됐어요.
-      </p>
-    </div>
-
-    <div class="card lavender">
-      <div class="card-title">🏪 공식 유통 채널</div>
-      <p>
-        SM 코엑스 아티움, YG타운 같은 공식 오프라인 스토어와 공식 온라인 쇼핑몰, 그리고 11번가·옥션 등 오픈마켓과의 제휴 판매도 이뤄지고 있어요. 2022년 기준 4대 엔터사(YG·SM·JYP·HYBE)의 MD 매출 합계는 전년 대비 약 20% 성장한 7,473억 원으로 분석됐어요.
-      </p>
-      <div class="tags" style="margin-top:10px;">
-        <span class="tag tag-lav">공식 온라인 쇼핑몰</span>
-        <span class="tag tag-lav">콘서트 현장 판매</span>
-        <span class="tag tag-lav">팝업스토어</span>
-        <span class="tag tag-lav">오픈마켓 제휴</span>
-      </div>
     </div>
   </div>
 
   <hr class="divider">
 
-  <!-- 비공식 굿즈 -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-icon" style="background:#e8f0ff;">🎨</div>
-      <div class="section-title"><span>비공식 굿즈</span> Fan-made Goods</div>
+  <!-- ══ 비공식 굿즈 ══ -->
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-icon" style="background:#fff4cc;">🎨</div>
+      <div class="sec-title"><em>비공식 굿즈</em> Fan-made Goods</div>
     </div>
-
-    <div class="card sky">
+    <div class="card apricot">
       <div class="card-title">🎨 비공식 굿즈란?</div>
       <p>팬들이 아이돌의 이미지를 재가공해 직접 제작·판매·공유하는 상품이에요. 원래는 개인 소장용 자작품으로 시작됐지만, 팬덤의 발달과 함께 실제 판매까지 이루어지는 규모로 성장했어요. 주로 트위터·인스타그램 등 SNS에서 거래되고, 콘서트·팬미팅 당일 공연장 근처에서 수령하는 방식으로 유통돼요.</p>
     </div>
-
-    <div class="card mint">
-      <div class="card-title">🌟 비공식 굿즈가 생겨난 이유</div>
-      <p>
-        팬들이 공식 굿즈의 한계를 느끼며 직접 만들기 시작했어요. 공식 굿즈는 모든 멤버를 포함한 단체 굿즈가 중심이지만, <strong>특정 멤버(최애)만을 위한 굿즈</strong>에 대한 수요가 크거든요. 또한 팬 입장에서 직접 만들기 때문에 팬심을 세밀하게 반영한 디자인이 가능해요. 가격 면에서도 공식 굿즈 대비 합리적인 경우가 많답니다.
-      </p>
-    </div>
-
-    <div class="card peach">
-      <div class="card-title">📦 비공식 굿즈 종류</div>
-      <p>
-        포토카드, 아크릴 키링, 슬로건(응원 현수막), 부채, 인형, 머그컵, 달력, 포토북, 뱃지, 도무송(특수 모양으로 재단한 종이 굿즈), 스티커, 에코백 등 공식 굿즈와 거의 동일한 형태로 만들어져요. 특정 멤버의 사진만 담은 포토북, 좋아하는 아이돌의 밈이나 명대사를 활용한 아이템도 인기예요.
-      </p>
-      <div class="tags" style="margin-top:10px;">
-        <span class="tag tag-peach">도무송 포카</span>
-        <span class="tag tag-peach">아크릴 키링</span>
-        <span class="tag tag-peach">슬로건/부채</span>
-        <span class="tag tag-peach">멤버 개인 포토북</span>
-        <span class="tag tag-peach">뱃지·스티커</span>
+    <div class="card coral">
+      <div class="card-title">💕 비공식 굿즈 종류 & 유통</div>
+      <p>포토카드, 아크릴 키링, 슬로건, 부채, 인형, 포토북, 뱃지, 도무송, 스티커, 에코백 등 공식 굿즈와 거의 동일한 형태로 만들어져요. SNS에서 주문을 받고, 공연장 근처에서 직접 수령하거나 나눔·추첨으로 증정하기도 해요.</p>
+      <div class="tags" style="margin-top:10px">
+        <span class="tag t-coral">도무송 포카</span>
+        <span class="tag t-peach">아크릴 키링</span>
+        <span class="tag t-yellow">슬로건 / 부채</span>
+        <span class="tag t-pink">멤버 개인 포토북</span>
+        <span class="tag t-coral">뱃지 · 스티커</span>
       </div>
-    </div>
-
-    <div class="card lavender">
-      <div class="card-title">💜 유통 방식</div>
-      <p>
-        트위터, 인스타그램 등 SNS에서 주문을 받고, 콘서트·팬미팅 시작 전 공연장 근처에서 직접 수령하는 방식이 일반적이에요. 소량 제작 후 무료 나눔이나 추첨으로 증정하는 경우도 많아서, 매 공연마다 새로운 아이템을 모으는 즐거움이 있어요.
-      </p>
     </div>
   </div>
 
   <hr class="divider">
 
-  <!-- 비교표 -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-icon" style="background:#f0fdf8;">⚖️</div>
-      <div class="section-title">공식 vs 비공식 <span>한눈에 비교</span></div>
+  <!-- ══ 비교 ══ -->
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-icon" style="background:#ffe8c8;">⚖️</div>
+      <div class="sec-title">공식 vs 비공식 <em>한눈에 비교</em></div>
     </div>
-
-    <div class="compare-grid">
-      <div class="compare-card official">
+    <div class="cmp-grid">
+      <div class="cmp-card cmp-official">
         <h3>🏢 공식 굿즈</h3>
         <ul>
-          <li><span>👑</span> 소속사·기획사 기획·제작</li>
+          <li><span>💛</span> 소속사·기획사 기획·제작</li>
           <li><span>✅</span> 법적 지식재산권 보호</li>
           <li><span>💰</span> 상대적으로 높은 가격</li>
-          <li><span>🎯</span> 그룹 전체 대상 상품 중심</li>
-          <li><span>🏪</span> 공식 쇼핑몰·콘서트 현장 판매</li>
-          <li><span>🔒</span> 한정판 희소성 보장</li>
+          <li><span>🎯</span> 그룹 전체 대상 중심</li>
+          <li><span>🏪</span> 공식 쇼핑몰·콘서트 현장</li>
+          <li><span>🌟</span> 한정판 희소성 보장</li>
           <li><span>📦</span> 대량 생산, 균일 품질</li>
-          <li><span>🌏</span> 해외 역직구도 가능</li>
+          <li><span>🌸</span> 해외 역직구 가능</li>
         </ul>
       </div>
-      <div class="compare-card unofficial">
+      <div class="cmp-card cmp-unofficial">
         <h3>🎨 비공식 굿즈</h3>
         <ul>
-          <li><span>💛</span> 팬이 직접 기획·제작</li>
+          <li><span>🌸</span> 팬이 직접 기획·제작</li>
           <li><span>⚠️</span> 저작권 그레이존 존재</li>
-          <li><span>💸</span> 상대적으로 합리적 가격</li>
-          <li><span>💜</span> 특정 멤버(최애) 특화 가능</li>
+          <li><span>🍊</span> 상대적으로 합리적 가격</li>
+          <li><span>💕</span> 특정 멤버(최애) 특화 가능</li>
           <li><span>📲</span> SNS·공연장 주변 유통</li>
           <li><span>🎁</span> 나눔·추첨 증정도 많음</li>
-          <li><span>✨</span> 팬심 반영, 개성 있는 디자인</li>
-          <li><span>🤝</span> 팬덤 내 자가발전·연대감</li>
+          <li><span>✨</span> 팬심 반영 개성 있는 디자인</li>
+          <li><span>🤝</span> 팬덤 연대감 형성</li>
         </ul>
       </div>
     </div>
-
-    <div class="card" style="border-color:#c0e0b8; background:#f4fbf0;">
-      <div class="card-title">📊 핵심 차이점 요약</div>
-      <p>
-        가장 큰 차이는 <strong>제작 주체와 커스터마이징 가능성</strong>이에요. 공식 굿즈는 기획사가 수익을 목적으로 대량 생산하기 때문에 그룹 전체를 대상으로 하고 품질이 균일한 반면, 팬의 세분화된 취향을 반영하기 어려워요. 비공식 굿즈는 팬이 직접 최애 멤버를 위해 만들기 때문에 개인 취향 반영이 자유롭고 가격도 합리적이지만, 저작권·초상권의 법적 문제가 항상 따라다녀요. 소속사들은 팬덤 활성화에 도움이 되는 선에서 비공식 굿즈를 묵인해 왔지만, K-POP의 글로벌 확산 이후 불법적인 영리 목적 판매에는 점점 강경하게 대응하고 있어요.
-      </p>
+    <div class="card warm">
+      <div class="card-title">🌼 핵심 차이점 요약</div>
+      <p>가장 큰 차이는 <strong>제작 주체와 커스터마이징 가능성</strong>이에요. 공식 굿즈는 기획사가 수익을 목적으로 대량 생산하기 때문에 그룹 전체를 대상으로 하고 품질이 균일한 반면, 팬의 세분화된 취향을 반영하기 어려워요. 비공식 굿즈는 팬이 직접 최애 멤버를 위해 만들기 때문에 개인 취향 반영이 자유롭고 가격도 합리적이지만, 저작권·초상권의 법적 문제가 항상 따라다녀요.</p>
     </div>
   </div>
 
   <hr class="divider">
 
-  <!-- 시장 규모 -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-icon" style="background:#fff0e0;">📈</div>
-      <div class="section-title">굿즈 산업 <span>시장 규모</span></div>
+  <!-- ══ 시장 규모 ══ -->
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-icon" style="background:#ffe8c8;">📈</div>
+      <div class="sec-title">굿즈 산업 <em>시장 규모</em></div>
     </div>
-
     <div class="stat-banner">
       <span class="stat-num">8조 원</span>
       <span class="stat-label">2022년 기준 K-POP 아이돌 팬덤 산업(팬더스트리) 규모 (한국국제교류재단)</span>
     </div>
-
-    <div class="card peach">
+    <div class="card apricot">
       <div class="card-title">💹 성장 추이</div>
-      <p>
-        2014년 아이돌 굿즈·초상 관련 시장은 약 750억 원 수준이었어요. SM엔터테인먼트 단독 굿즈 매출이 2014년 약 290억에서 2015년 약 580억으로 불과 1년 만에 두 배 성장한 것에서 폭발적인 확장세를 알 수 있어요. K-POP이 세계적으로 확산되면서 굿즈 시장도 국내를 넘어 글로벌 역직구까지 이루어지고 있답니다.
-      </p>
+      <p>2014년 아이돌 굿즈·초상 관련 시장은 약 750억 원 수준이었어요. SM엔터테인먼트 단독 굿즈 매출이 2014년 약 290억에서 2015년 약 580억으로 불과 1년 만에 두 배 성장했어요. 2022년 기준 4대 엔터사 MD 매출 합계는 전년 대비 약 20% 성장한 7,473억 원으로 분석됐어요.</p>
     </div>
   </div>
 
   <hr class="divider">
 
-  <!-- 이슈 및 문제점 -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-icon" style="background:#fde8f0;">⚠️</div>
-      <div class="section-title">굿즈 문화의 <span>이슈와 문제점</span></div>
+  <!-- ══ 공식 MD샵 & 홈페이지 링크 ══ -->
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-icon" style="background:#fde8f0;">🛍️</div>
+      <div class="sec-title">소속사별 <em>공식 MD샵 & 홈페이지</em></div>
+    </div>
+    <div class="info-box" style="margin-bottom:20px;">
+      <p>각 소속사의 공식 쇼핑몰과 홈페이지 링크를 모았어요 🌸 카드를 누르면 해당 사이트로 이동해요!</p>
+    </div>
+
+    <!-- HYBE -->
+    <div class="sub-head">🎤 HYBE (BTS · 세븐틴 · 투모로우바이투게더 · 뉴진스 · 르세라핌 등)</div>
+    <div class="shop-grid">
+      <a class="shop-card hybe" href="https://shop.weverse.io/ko/home" target="_blank" rel="noopener">
+        <span class="s-label">HYBE 공식 MD샵</span>
+        <div class="s-name">🛍️ Weverse Shop</div>
+        <div class="s-desc">HYBE 아티스트 전체 공식 굿즈 및 앨범 판매 통합 플랫폼</div>
+        <div class="s-url">shop.weverse.io</div>
+      </a>
+      <a class="shop-card hybe" href="https://weverse.io" target="_blank" rel="noopener">
+        <span class="s-label">HYBE 팬 커뮤니티</span>
+        <div class="s-name">💬 Weverse</div>
+        <div class="s-desc">BTS, 세븐틴, TXT, 뉴진스, 르세라핌 등 공식 팬 커뮤니티</div>
+        <div class="s-url">weverse.io</div>
+      </a>
+      <a class="shop-card hybe" href="https://www.hybecorp.com" target="_blank" rel="noopener">
+        <span class="s-label">HYBE 공식 홈페이지</span>
+        <div class="s-name">🏢 HYBE Corp</div>
+        <div class="s-desc">하이브 엔터테인먼트 공식 기업 홈페이지</div>
+        <div class="s-url">hybecorp.com</div>
+      </a>
+    </div>
+
+    <!-- SM -->
+    <div class="sub-head">🎤 SM Entertainment (aespa · 엑소 · 샤이니 · NCT · 라이즈 등)</div>
+    <div class="shop-grid">
+      <a class="shop-card sm" href="https://en.smtownandstore.com" target="_blank" rel="noopener">
+        <span class="s-label">SM 공식 MD샵</span>
+        <div class="s-name">🛍️ SMTOWN &STORE</div>
+        <div class="s-desc">SM 아티스트 공식 굿즈·앨범·라이프스타일 상품 공식 글로벌 쇼핑몰</div>
+        <div class="s-url">smtownandstore.com</div>
+      </a>
+      <a class="shop-card sm" href="https://www.smtown.com" target="_blank" rel="noopener">
+        <span class="s-label">SM 공식 앱/사이트</span>
+        <div class="s-name">📱 SMTOWN Official</div>
+        <div class="s-desc">스케줄, 응원봉 연동, AR 콘텐츠 등 SM 아티스트 공식 플랫폼</div>
+        <div class="s-url">smtown.com</div>
+      </a>
+      <a class="shop-card sm" href="https://www.smentertainment.com" target="_blank" rel="noopener">
+        <span class="s-label">SM 공식 홈페이지</span>
+        <div class="s-name">🏢 SM Entertainment</div>
+        <div class="s-desc">에스엠 엔터테인먼트 공식 기업 홈페이지</div>
+        <div class="s-url">smentertainment.com</div>
+      </a>
+    </div>
+
+    <!-- JYP -->
+    <div class="sub-head">🎤 JYP Entertainment (트와이스 · 스트레이키즈 · 있지 · 엔믹스 등)</div>
+    <div class="shop-grid">
+      <a class="shop-card jyp" href="https://thejypshop.com" target="_blank" rel="noopener">
+        <span class="s-label">JYP 공식 MD샵</span>
+        <div class="s-name">🛍️ JYP SHOP</div>
+        <div class="s-desc">트와이스, 스트레이키즈, 있지, 엔믹스 등 JYP 아티스트 공식 굿즈</div>
+        <div class="s-url">thejypshop.com</div>
+      </a>
+      <a class="shop-card jyp" href="https://www.jype.com" target="_blank" rel="noopener">
+        <span class="s-label">JYP 공식 홈페이지</span>
+        <div class="s-name">🏢 JYP Entertainment</div>
+        <div class="s-desc">제이와이피 엔터테인먼트 공식 홈페이지</div>
+        <div class="s-url">jype.com</div>
+      </a>
+    </div>
+
+    <!-- YG -->
+    <div class="sub-head">🎤 YG Entertainment (BLACKPINK · BIGBANG · WINNER · iKON · TREASURE 등)</div>
+    <div class="shop-grid">
+      <a class="shop-card yg" href="https://ygselect.com" target="_blank" rel="noopener">
+        <span class="s-label">YG 공식 MD샵</span>
+        <div class="s-name">🛍️ YG SELECT</div>
+        <div class="s-desc">YG 아티스트 음반 및 공식 MD 온라인 쇼핑몰 (한국·글로벌)</div>
+        <div class="s-url">ygselect.com</div>
+      </a>
+      <a class="shop-card yg" href="https://shop.weverse.io/ko/home" target="_blank" rel="noopener">
+        <span class="s-label">YG + HYBE 공동 MD샵</span>
+        <div class="s-name">🛍️ Weverse Shop (YG)</div>
+        <div class="s-desc">YG 아티스트 굿즈도 위버스샵에서 일부 판매 중</div>
+        <div class="s-url">shop.weverse.io</div>
+      </a>
+      <a class="shop-card yg" href="https://www.yg-entertainment.com" target="_blank" rel="noopener">
+        <span class="s-label">YG 공식 홈페이지</span>
+        <div class="s-name">🏢 YG Entertainment</div>
+        <div class="s-desc">와이지 엔터테인먼트 공식 홈페이지</div>
+        <div class="s-url">yg-entertainment.com</div>
+      </a>
+    </div>
+
+    <!-- STARSHIP -->
+    <div class="sub-head">🎤 STARSHIP Entertainment (아이브 · 몬스타엑스 · 크래비티 등)</div>
+    <div class="shop-grid">
+      <a class="shop-card starship" href="https://www.starship-square.com" target="_blank" rel="noopener">
+        <span class="s-label">스타쉽 공식 MD샵</span>
+        <div class="s-name">🛍️ STARSHIP SQUARE</div>
+        <div class="s-desc">아이브, 몬스타엑스, 크래비티 등 스타쉽 아티스트 공식 굿즈샵</div>
+        <div class="s-url">starship-square.com</div>
+      </a>
+      <a class="shop-card starship" href="https://www.starship-ent.com" target="_blank" rel="noopener">
+        <span class="s-label">스타쉽 공식 홈페이지</span>
+        <div class="s-name">🏢 STARSHIP Entertainment</div>
+        <div class="s-desc">스타쉽 엔터테인먼트 공식 홈페이지</div>
+        <div class="s-url">starship-ent.com</div>
+      </a>
+    </div>
+
+    <!-- 글로벌 / 종합 -->
+    <div class="sub-head">🌏 글로벌 / 종합 K-POP 굿즈 플랫폼</div>
+    <div class="shop-grid">
+      <a class="shop-card global" href="https://kr.ktown4u.com" target="_blank" rel="noopener">
+        <span class="s-label">글로벌 K-POP 샵</span>
+        <div class="s-name">🌏 Ktown4u</div>
+        <div class="s-desc">다양한 소속사 아티스트 앨범·굿즈·포토카드 글로벌 구매 대행</div>
+        <div class="s-url">kr.ktown4u.com</div>
+      </a>
+      <a class="shop-card global" href="https://www.melon.com" target="_blank" rel="noopener">
+        <span class="s-label">음원 스트리밍</span>
+        <div class="s-name">🎵 Melon</div>
+        <div class="s-desc">국내 최대 음원 스트리밍 서비스. 아이돌 신보 최초 감상 가능</div>
+        <div class="s-url">melon.com</div>
+      </a>
+      <a class="shop-card global" href="https://www.yes24.com" target="_blank" rel="noopener">
+        <span class="s-label">앨범 구매</span>
+        <div class="s-name">📀 YES24</div>
+        <div class="s-desc">국내 대형 온라인 서점 겸 K-POP 앨범 공식 판매처. 특전 증정</div>
+        <div class="s-url">yes24.com</div>
+      </a>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ══ 이슈 ══ -->
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-icon" style="background:#fde8f0;">⚠️</div>
+      <div class="sec-title">굿즈 문화의 <em>이슈와 문제점</em></div>
     </div>
     <div class="card">
       <div class="issue-row">
@@ -544,7 +608,7 @@
         <div class="issue-text"><strong>가격 대비 품질 논란</strong> — 공식 굿즈가 아이돌 이름을 붙여 가격을 과도하게 높인다는 비판도 있어요. 이 때문에 팬들이 더 나은 품질과 가격의 비공식 굿즈를 찾게 되는 역설적인 상황도 발생해요.</div>
       </div>
       <div class="issue-row">
-        <div class="issue-icon">🌐</div>
+        <div class="issue-icon">🌏</div>
         <div class="issue-text"><strong>해외 유통 문제</strong> — K-POP의 글로벌 인기로 비공식 굿즈가 해외까지 유통되면서 그레이존을 넘어 명백한 불법 판매 사례가 증가하고 있어요. 2018년에는 워너원 팬들이 말레이시아에서 굿즈를 판매하다 이민법 위반으로 체포되는 사건도 있었어요.</div>
       </div>
       <div class="issue-row">
@@ -557,7 +621,10 @@
 </div>
 
 <div class="footer">
-  🌸 자료 출처: 위키백과, 나무위키, 영남일보, 투데이신문, 스타인뉴스 등 · 2024~2025 기준 ✨
+  🌸 자료 출처: 위키백과, 나무위키, 영남일보, 투데이신문, 스타인뉴스 등 · 2024~2025 기준<br><br>
+  <svg style="display:inline-block;animation:spin 8s linear infinite;vertical-align:middle;" width="14" height="14" viewBox="0 0 36 36"><path d="M18 3l3.2 9.6h10.1l-8.2 5.9 3.1 9.6L18 23.3l-8.2 5.8 3.1-9.6-8.2-5.9h10.1z" fill="#f19ec2"/></svg>
+  made with love ✨
+  <svg style="display:inline-block;animation:spin 8s linear infinite reverse;vertical-align:middle;" width="14" height="14" viewBox="0 0 36 36"><path d="M18 3l3.2 9.6h10.1l-8.2 5.9 3.1 9.6L18 23.3l-8.2 5.8 3.1-9.6-8.2-5.9h10.1z" fill="#ffe96a"/></svg>
 </div>
 
 </body>
